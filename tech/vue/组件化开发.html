@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>组件化开发 | 跨过山河大海的攻城狮</title>
+    <meta name="description" content="There is no royal road to learning">
+    <meta name="generator" content="VuePress 1.3.0">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.ec6bccb2.css" as="style"><link rel="preload" href="/assets/js/app.518a227c.js" as="script"><link rel="preload" href="/assets/js/3.70fd9169.js" as="script"><link rel="preload" href="/assets/js/5.29b61dc1.js" as="script"><link rel="prefetch" href="/assets/js/10.365213d4.js"><link rel="prefetch" href="/assets/js/11.32985faf.js"><link rel="prefetch" href="/assets/js/12.01d023c9.js"><link rel="prefetch" href="/assets/js/13.d1e4177c.js"><link rel="prefetch" href="/assets/js/14.aa61d457.js"><link rel="prefetch" href="/assets/js/15.ceeab785.js"><link rel="prefetch" href="/assets/js/16.1d4d4525.js"><link rel="prefetch" href="/assets/js/17.2efd3caf.js"><link rel="prefetch" href="/assets/js/18.f1ca622d.js"><link rel="prefetch" href="/assets/js/19.f20b45ac.js"><link rel="prefetch" href="/assets/js/20.231a0a8a.js"><link rel="prefetch" href="/assets/js/21.43d3d262.js"><link rel="prefetch" href="/assets/js/4.538a04d4.js"><link rel="prefetch" href="/assets/js/6.fc624eee.js"><link rel="prefetch" href="/assets/js/7.2bb33529.js"><link rel="prefetch" href="/assets/js/8.b220b584.js"><link rel="prefetch" href="/assets/js/9.b09edcb6.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.a62bcc3d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ec6bccb2.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">跨过山河大海的攻城狮</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tech Menu" class="dropdown-title"><span class="title">技术文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/tech/vue/" class="nav-link router-link-active">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/tech/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-subitem"><a href="/tech/vue-cli/" class="nav-link">
+  Vue-cli
+</a></li></ul></li><li class="dropdown-item"><h4>
+          后端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/tech/python/" class="nav-link">
+  Python
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Other Menu" class="dropdown-title"><span class="title">随便写写</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/python/" class="nav-link">
+  摄影
+</a></li><li class="dropdown-item"><!----> <a href="/tech/python/" class="nav-link">
+  美食
+</a></li></ul></div></div><div class="nav-item"><a href="/tech/vue/" class="nav-link router-link-active">
+  关于
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Friend Menu" class="dropdown-title"><span class="title">友链</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.leesans.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  LeeSans
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://mifuko.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  黄金飞
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://baidu.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Tech Menu" class="dropdown-title"><span class="title">技术文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/tech/vue/" class="nav-link router-link-active">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/tech/webpack/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-subitem"><a href="/tech/vue-cli/" class="nav-link">
+  Vue-cli
+</a></li></ul></li><li class="dropdown-item"><h4>
+          后端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/tech/python/" class="nav-link">
+  Python
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Other Menu" class="dropdown-title"><span class="title">随便写写</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/tech/python/" class="nav-link">
+  摄影
+</a></li><li class="dropdown-item"><!----> <a href="/tech/python/" class="nav-link">
+  美食
+</a></li></ul></div></div><div class="nav-item"><a href="/tech/vue/" class="nav-link router-link-active">
+  关于
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Friend Menu" class="dropdown-title"><span class="title">友链</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://blog.leesans.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  LeeSans
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://mifuko.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  黄金飞
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://baidu.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>基础</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech/vue/" class="sidebar-link">Vue基本介绍</a></li><li><a href="/tech/vue/邂逅Vue.html" class="sidebar-link">邂逅Vue.js</a></li><li><a href="/tech/vue/Vue基础语法.html" class="sidebar-link">Vue基础语法</a></li><li><a href="/tech/vue/组件化开发.html" class="active sidebar-link">组件化开发</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech/vue/组件化开发.html#认识组件化" class="sidebar-link">认识组件化</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech/vue/组件化开发.html#什么是组件化？" class="sidebar-link">什么是组件化？</a></li><li class="sidebar-sub-header"><a href="/tech/vue/组件化开发.html#vue组件化思想" class="sidebar-link">Vue组件化思想</a></li></ul></li><li class="sidebar-sub-header"><a href="/tech/vue/组件化开发.html#组件化基础" class="sidebar-link">组件化基础</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech/vue/组件化开发.html#组件注册" class="sidebar-link">组件注册</a></li><li class="sidebar-sub-header"><a href="/tech/vue/组件化开发.html#数据传递" class="sidebar-link">数据传递</a></li><li class="sidebar-sub-header"><a href="/tech/vue/组件化开发.html#父子组件的通信" class="sidebar-link">父子组件的通信</a></li></ul></li><li class="sidebar-sub-header"><a href="/tech/vue/组件化开发.html#组件化高级" class="sidebar-link">组件化高级</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tech/vue/组件化开发.html#为什么使用slot？" class="sidebar-link">为什么使用slot？</a></li><li class="sidebar-sub-header"><a href="/tech/vue/组件化开发.html#如何使用slot？" class="sidebar-link">如何使用slot？</a></li><li class="sidebar-sub-header"><a href="/tech/vue/组件化开发.html#slot的基本使用" class="sidebar-link">slot的基本使用</a></li><li class="sidebar-sub-header"><a href="/tech/vue/组件化开发.html#具名插槽slot" class="sidebar-link">具名插槽slot</a></li><li class="sidebar-sub-header"><a href="/tech/vue/组件化开发.html#编译作用域" class="sidebar-link">编译作用域</a></li><li class="sidebar-sub-header"><a href="/tech/vue/组件化开发.html#作用域插槽" class="sidebar-link">作用域插槽</a></li></ul></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>进阶</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tech/vue/前端模块化.html" class="sidebar-link">前端模块化</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="组件化开发"><a href="#组件化开发" class="header-anchor">#</a> 组件化开发</h1> <h2 id="认识组件化"><a href="#认识组件化" class="header-anchor">#</a> 认识组件化</h2> <h3 id="什么是组件化？"><a href="#什么是组件化？" class="header-anchor">#</a> 什么是组件化？</h3> <ul><li>人面对复杂问题的处理方式：
+<ul><li>任何一个人处理信息的逻辑能力都是有限的，所以，当面对一个非常复杂的问题时，我们不太可能一次性搞定一大堆的内容，但是，我们人有一种天生的能力，就是将问题进行拆解。</li> <li>如果将一个复杂的问题，拆分成很多个可以处理的小问题，再将其放在整体当中，你会发现大的问题也会迎刃而解。</li></ul></li> <li>组件化也是类似的思想：
+<ul><li>如果我们将一个页面中所有的处理逻辑全部放在一起，处理起来就会变得非常复杂，而且不利于后续的管理以及扩展</li> <li>但如果，我们讲一个页面拆分成一个个小的功能块，每个功能块完成属于自己这部分独立的功能，那么之后整个页面的管理和维护就变得非常容易了</li></ul></li></ul> <h3 id="vue组件化思想"><a href="#vue组件化思想" class="header-anchor">#</a> Vue组件化思想</h3> <ul><li>组件化是Vue.js中的重要思想
+<ul><li>它提供了一种抽象，让我们可以开发出一个个独立可复用的小组件来构造我们的应用</li> <li>任何的应用都会被抽象成一颗组件树</li></ul></li></ul> <p><img src="/assets/img/vue_tree.99e4ae96.jpg" alt="vue_tree"></p> <ul><li>组件化思想的应用：
+<ul><li>有了组件化的思想，我们在之后的开发中就要充分的利用它</li> <li>尽可能的将页面拆分成一个个小的、可复用的组件</li> <li>这样让我们的代码更加方便组织和管理，并且扩展性也更强</li></ul></li></ul> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>例如，你可能会有页头、侧边栏、内容区等组件，每个组件又包含了其它的像导航链接、博文之类的组件</p></div> <h2 id="组件化基础"><a href="#组件化基础" class="header-anchor">#</a> 组件化基础</h2> <h3 id="组件注册"><a href="#组件注册" class="header-anchor">#</a> 组件注册</h3> <h4 id="注册组件的基本步骤"><a href="#注册组件的基本步骤" class="header-anchor">#</a> 注册组件的基本步骤</h4> <ul><li>组件的使用分成三个步骤：
+<ul><li>创建组件构造器</li> <li>注册组件</li> <li>使用组件</li></ul></li></ul> <div align="center"><img src="/assets/img/register.ad8aa79a.png" alt="register" style="zoom:67%;"></div> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  //3、使用组件
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-cpn</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-cpn</span><span class="token punctuation">&gt;</span></span>   
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>vue.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+	<span class="token comment">//1、创建组件构造器</span>
+  <span class="token keyword">const</span> myComponent <span class="token operator">=</span> Vue<span class="token punctuation">.</span><span class="token function">exteng</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    template<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+			&lt;div&gt;
+				&lt;h2&gt;组件标题&lt;/h2&gt;
+				&lt;p&gt;我是组件中的一个段落&lt;/p&gt;
+			&lt;div&gt;
+		</span><span class="token template-punctuation string">`</span></span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">//2、注册组件，并且定义组件标签的名称</span>
+  Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'my-cpn'</span><span class="token punctuation">,</span> myComponent<span class="token punctuation">)</span>
+  
+  <span class="token keyword">let</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    el<span class="token operator">:</span> <span class="token string">'#app'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h4 id="注册组件步骤解析"><a href="#注册组件步骤解析" class="header-anchor">#</a> 注册组件步骤解析</h4> <ul><li><p>Vue.extend()：</p> <ul><li><p>调用Vue.extend()创建的是一个组件构造器</p></li> <li><p>通常在创建组件构造器时，传入template代表我们自定义组件的模板</p></li> <li><p>该模板就是在使用到组件的地方，要显示的HTML代码</p></li></ul></li></ul> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>事实上，这种写法在Vue2.x的文档中几乎已经看不到了，它会直接使用下面我们会讲到的语法糖，但是在很多资料还是会提到这种方式，而且这种方式是学习后面方式的基础。</p></div> <ul><li><p>Vue.component()：</p> <ul><li><p>调用Vue.component()是将刚才的组件构造器注册为一个组件，并且给它起一个组件的标签名称</p></li> <li><p>需要传递两个参数：1、注册组件的标签名 2、组件构造器</p></li></ul></li> <li><p>组件必须挂载在某个Vue实例下，否则它不会生效，具体看下图</p></li></ul> <img src="/assets/img/register2.eff01332.png" style="zoom:67%;"> <h4 id="全局组件和局部组件"><a href="#全局组件和局部组件" class="header-anchor">#</a> 全局组件和局部组件</h4> <ul><li><p>当我们通过调用Vue.component()注册组件时，组件的注册是全局的</p> <ul><li>这意味着该组件可以在任意Vue示例下使用</li></ul></li> <li><p>如果我们注册的组件是挂载在某个实例中, 那么就是一个局部组件</p></li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  //3、使用局部注册的组件
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-cpn</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-cpn</span><span class="token punctuation">&gt;</span></span>   
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  //4、在app1中注册的组件是不会被渲染的
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-cpn</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-cpn</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>vue.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+	<span class="token comment">//1、创建组件构造器</span>
+  <span class="token keyword">const</span> myComponent <span class="token operator">=</span> Vue<span class="token punctuation">.</span><span class="token function">exteng</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    template<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+			&lt;div&gt;
+				&lt;h2&gt;组件标题&lt;/h2&gt;
+				&lt;p&gt;我是组件中的一个段落&lt;/p&gt;
+			&lt;div&gt;
+		</span><span class="token template-punctuation string">`</span></span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword">let</span> app1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+    components<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">'my-cpn'</span><span class="token operator">:</span> myCompenent <span class="token comment">//2、注册局部组件，并且定义组件标签的名称</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  
+  <span class="token keyword">let</span> app2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    el<span class="token operator">:</span> <span class="token string">'#app'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h4 id="父组件和子组件"><a href="#父组件和子组件" class="header-anchor">#</a> 父组件和子组件</h4> <ul><li><p>在前面我们看到了组件树：</p> <ul><li>组件和组件之间存在层级关系</li> <li>而其中一种非常重要的关系就是父子组件的关系</li></ul></li> <li><p>我们通过代码来看下这种层级关系是如何组成的</p></li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>parent-cpn</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>parent-cpn</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>vue.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+	<span class="token comment">//1、创建子组件构造器</span>
+  <span class="token keyword">const</span> childComponent <span class="token operator">=</span> Vue<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    template<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+			&lt;div&gt;我是一个子组件&lt;div&gt;
+		</span><span class="token template-punctuation string">`</span></span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  	<span class="token comment">//2、创建父组件构造器</span>
+  <span class="token keyword">const</span> parentComponent <span class="token operator">=</span> Vue<span class="token punctuation">.</span><span class="token function">exteng</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    template<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+			&lt;div&gt;我是一个父组件&lt;div&gt;
+			&lt;child-cpn&gt;&lt;/child-cpn&gt;
+		</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    components<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">'child-cpn'</span><span class="token operator">:</span> childComponent
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> app1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+    components<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">'parent-cpn'</span><span class="token operator">:</span> parentCompenent <span class="token comment">//2、注册父组件，并且定义组件标签的名称</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>父子组件错误用法：以子标签的形式在Vue实例中使用(<child-cpn></child-cpn>是只能在父组件中被识别的)</p> <p>因为当子组件注册到父组件的components时，Vue会编译好父组件的模块</p> <p>该模板的内容已经决定了父组件将要渲染的HTML（相当于父组件中已经有了子组件中的内容了）</p></div> <h4 id="注册组件语法糖"><a href="#注册组件语法糖" class="header-anchor">#</a> 注册组件语法糖</h4> <p>在上面的注册组件的方式，可能会有些繁琐，Vue为了简化这个过程，提供了注册的语法糖，主要是省去了调用Vue.extend()的步骤，而是可以直接使用一个对象来代替。</p> <ul><li>语法糖注册全局组件</li></ul> <div class="language-html extra-class"><pre class="language-html"><code>Vue.component('my-cpn', {
+  template: `
+  	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>我是一个组件<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>  
+    `
+})
+</code></pre></div><ul><li>语法糖注册局部组件</li></ul> <div class="language-html extra-class"><pre class="language-html"><code>  let app1 = new Vue({
+    el: '#app',
+    components: {
+      'mycpn1': {
+				  template: `<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>我是一个组件<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>`
+       },
+			'mycpn2': {
+          template: `<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>我是一个组件<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>`
+       }
+    }
+  })
+</code></pre></div><h4 id="模板分离的写法"><a href="#模板分离的写法" class="header-anchor">#</a> 模板分离的写法</h4> <p>在上面的部分，我们通过语法糖简化了Vue组件的注册过程，另外还有一个地方的写法比较麻烦，就是template模块写法。</p> <p>Vue提供了两种方案来定义HTML模块内容：</p> <ul><li>使用<code>&lt;script&gt;</code>标签</li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-cpn</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-cpn</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/x-template<span class="token punctuation">&quot;</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>myCpn<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+				<span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>我是一个组件<span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>vue.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">let</span> app1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+    components<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">'my-cpn'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        template<span class="token operator">:</span> <span class="token string">'#myCpn'</span>
+      <span class="token punctuation">}</span> 
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><ul><li>使用<code>&lt;template&gt;</code>标签</li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-cpn</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-cpn</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>myCpn<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+				<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>我是一个组件<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>vue.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">let</span> app1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+    components<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">'my-cpn'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        template<span class="token operator">:</span> <span class="token string">'#myCpn'</span>
+      <span class="token punctuation">}</span> 
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="数据传递"><a href="#数据传递" class="header-anchor">#</a> 数据传递</h3> <h4 id="组件可以访问vue实例数据吗？"><a href="#组件可以访问vue实例数据吗？" class="header-anchor">#</a> 组件可以访问Vue实例数据吗？</h4> <ul><li>组件是一个单独功能模块的封装：这个模块有属于自己的HTML模板，也应该有属性自己的数据data。</li> <li>组件中的数据是保存在哪里呢？顶层的Vue实例中吗？</li> <li>首先我们发现组件并不能访问实例中的数据，并且即使可以访问，如果将所有的数据都放在Vue实例中，Vue实例就会变的非常臃肿。</li></ul> <h4 id="组件数据的存放"><a href="#组件数据的存放" class="header-anchor">#</a> 组件数据的存放</h4> <ul><li>组件自己的数据存放在哪里呢?
+<ul><li>组件对象也有一个data属性(也可以有methods等属性，下面我们有用到)</li> <li>只是这个data属性必须是一个函数</li> <li>而且这个函数返回一个对象，对象内部保存着数据</li></ul></li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-cpn</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-cpn</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>myCpn<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>我是一个组件:{{ message }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>vue.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">let</span> app1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+    components<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">'my-cpn'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        template<span class="token operator">:</span> <span class="token string">'#myCpn'</span><span class="token punctuation">,</span>
+        <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          retuern <span class="token punctuation">{</span>
+            message<span class="token operator">:</span> <span class="token string">'Hello Vue!'</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span> 
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h4 id="为什么是一个函数？"><a href="#为什么是一个函数？" class="header-anchor">#</a> 为什么是一个函数？</h4> <ul><li><p>首先，如果不是一个函数，Vue直接就会报错</p></li> <li><p>其次，原因是在于Vue让每个组件对象都返回一个新的对象，因为如果是同一个对象的，组件在多次使用后会相互影响</p></li></ul> <h3 id="父子组件的通信"><a href="#父子组件的通信" class="header-anchor">#</a> 父子组件的通信</h3> <ul><li>在上一个小节中，我们提到了子组件是不能引用父组件或者Vue实例的数据的。</li> <li>但是，在开发中，往往一些数据确实需要从上层传递到下层：
+<ul><li>比如在一个页面中，我们从服务器请求到了很多的数据</li> <li>其中一部分数据，并非是我们整个页面的大组件来展示的，而是需要下面的子组件进行展示</li> <li>这个时候，并不会让子组件再次发送一个网络请求，而是直接让大组件(父组件)将数据传递给小组件(子组件)</li></ul></li></ul> <div align="center"><img src="/assets/img/p_c.9f6bb0f3.png" alt="父子组件通信" style="zoom:80%;"></div> <ul><li>如何进行父子组件间的通信呢？Vue官方提到：
+<ul><li>通过props向子组件传递数据</li> <li>通过事件向父组件发送消息</li></ul></li></ul> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>在下面的代码中，我直接将Vue实例当做父组件，并且其中包含子组件来简化代码</p> <p>真实的开发中，Vue实例和子组件的通信和父组件和子组件的通信过程是一样的</p></div> <h4 id="props基本用法"><a href="#props基本用法" class="header-anchor">#</a> props基本用法</h4> <ul><li>在组件中，使用选项props来声明需要从父级接收到的数据</li> <li>props的值有两种方式：
+<ul><li>方式一：字符串数组，数组中的字符串就是传递时的名称</li> <li>方式二：对象，对象可以设置传递时的类型，也可以设置默认值等</li></ul></li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>child-cpn</span> <span class="token attr-name">:message</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>message<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>child-cpn</span><span class="token punctuation">&gt;</span></span> //3、通过:message=&quot;message&quot;将data中的数据传递
+  																								给props
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>childCpn<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>我是一个组件<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+  	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>
+    显示信息:{{ message }} //4、将props中的数据显示在子组件中
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>vue.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">let</span> app1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+    data<span class="token operator">:</span> <span class="token punctuation">{</span>
+      message<span class="token operator">:</span> <span class="token string">'Hello Vue!'</span> <span class="token comment">//1、Vue实例中的数据</span>
+    <span class="token punctuation">}</span>
+    components<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">'child-cpn'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        template<span class="token operator">:</span> <span class="token string">'#childCpn'</span><span class="token punctuation">,</span>
+    		props<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'message'</span><span class="token punctuation">]</span> <span class="token comment">//2、子组件中的props</span>
+      <span class="token punctuation">}</span> 
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h4 id="props数据验证"><a href="#props数据验证" class="header-anchor">#</a> props数据验证</h4> <ul><li>在上面的代码中我们的props选项是使用一个数组</li> <li>除了数组之外，我们也可以使用对象，当需要对props进行类型等验证时，就需要对象写法了</li></ul> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <ul><li>String</li> <li>Number</li> <li>Boolean</li> <li>Array</li> <li>Object</li> <li>Date</li> <li>Function</li> <li>Symbol</li> <li>当我们有自定义构造函数时，验证也支持自定义的类型</li></ul></div> <ul><li>自定义类型：</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token parameter">firstName<span class="token punctuation">,</span> lastName</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>firstName <span class="token operator">=</span> firstName
+	<span class="token keyword">this</span><span class="token punctuation">.</span>lastName <span class="token operator">=</span> lastName
+<span class="token punctuation">}</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'blog-post'</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+	props<span class="token operator">:</span> <span class="token punctuation">{</span>
+		author<span class="token operator">:</span> Person
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h4 id="子级向父级传递"><a href="#子级向父级传递" class="header-anchor">#</a> 子级向父级传递</h4> <ul><li>props用于父组件向子组件传递数据，还有一种比较常见的是子组件传递数据或事件到父组件中</li> <li>我们应该如何处理呢？这个时候，我们需要使用自定义事件来完成</li></ul> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <ul><li>什么时候需要自定义事件呢？
+<ul><li>当子组件需要向父组件传递数据时，就要用到自定义事件了</li> <li>我们之前学习的v-on不仅仅可以用于监听DOM事件，也可以用于组件间的自定义事件</li></ul></li></ul></div> <ul><li>自定义事件的流程：
+<ul><li>在子组件中，通过$emit()来触发事件</li> <li>在父组件中，通过v-on来监听子组件事件</li></ul></li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  //通过自定义事件来接受子组件中的数据
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>child-cpn</span> <span class="token attr-name">@increment</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>changeTotal<span class="token punctuation">&quot;</span></span> <span class="token attr-name">@decrement</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>changeTotal<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>child-cpn</span><span class="token punctuation">&gt;</span></span> 
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>点击次数：{{ total }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>childCpn<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>我是一个组件<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>increment<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>+1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>decrement<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>-1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+  <span class="token keyword">let</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+    data<span class="token operator">:</span> <span class="token punctuation">{</span>
+      total<span class="token operator">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token function">changeTotal</span><span class="token punctuation">(</span><span class="token parameter">counter</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>total <span class="token operator">=</span> counter
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    components<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">'child-cpn'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        template<span class="token operator">:</span> <span class="token string">'#childCpn'</span><span class="token punctuation">,</span>
+    		<span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    			<span class="token keyword">return</span> <span class="token punctuation">{</span>
+            counter<span class="token operator">:</span> <span class="token number">0</span>
+          <span class="token punctuation">}</span>
+ 			 	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+        methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token function">increment</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>counter<span class="token operator">++</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'increment'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>counter<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token function">decrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>counter<span class="token operator">--</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">'decrement'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>counter<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span> 
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre></div><p>在上面这个例子中：</p> <ul><li>我们整个操作的过程还是在子组件中完成，但是之后的展示交给父组件</li> <li>这样，我们就需要将子组件中的counter，传给父组件的某个属性，比如total</li></ul> <h4 id="父子组件访问方式：-children"><a href="#父子组件访问方式：-children" class="header-anchor">#</a> 父子组件访问方式：$children</h4> <ul><li>有时候我们需要父组件直接访问子组件，子组件直接访问父组件，或者是子组件访问跟组件</li> <li>我们先来看下$children的访问
+<ul><li>this.$children是一个数组类型，它包含所有子组件对象。</li> <li>我们可以通过一个遍历，取出所有子组件的属性。</li></ul></li></ul> <h4 id="父子组件访问方式：-refs"><a href="#父子组件访问方式：-refs" class="header-anchor">#</a> 父子组件访问方式：$refs</h4> <div class="custom-block warning"><p class="custom-block-title">WARNING</p> <ul><li>$children的缺陷：
+<ul><li>通过$children访问子组件时，是一个数组类型，访问其中的子组件必须通过索引值</li> <li>但是当子组件过多，我们需要拿到其中一个时，往往不能确定它的索引值，甚至还可能会发生变化</li> <li>有时候，我们想明确获取其中一个特定的组件，这个时候就可以使用$refs</li></ul></li></ul></div> <ul><li>$refs的使用：
+<ul><li>$refs和ref指令通常是一起使用的</li> <li>首先，我们通过ref给某一个子组件绑定一个特定的ID</li> <li>其次，通过this.$refs.ID就可以访问到该组件了</li></ul></li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>child-cpn1</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>child1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>child-cpn1</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>child-cpn2</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>child2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>child-cpn2</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>showRefsCpn<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>通过refs访问子组件<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+
+showRefsCpn() {
+	console.log(this.$refs.child1.message)
+	console.log(this.$refs.child2.message)
+}
+</code></pre></div><h4 id="父子组件访问方式：-parent"><a href="#父子组件访问方式：-parent" class="header-anchor">#</a> 父子组件访问方式：$parent</h4> <ul><li>如果我们想在子组件中直接访问父组件，可以通过$parent</li></ul> <div class="custom-block danger"><p class="custom-block-title">WARNING</p> <ul><li>尽管在Vue开发中，我们允许通过$parent来访问父组件，但是在真实开发中尽量不要这样做</li> <li>子组件应该尽量避免直接访问父组件的数据，因为这样耦合度太高了</li> <li>如果我们将子组件放在另外一个组件之内，很可能该父组件没有对应的属性，往往会引起问题</li> <li>另外，更不好做的是通过$parent直接修改父组件的状态，那么父组件中的状态将变得飘忽不定，很不利于我的调试和维护</li></ul></div> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>parent-cpn</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>parent-cpn</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>vue.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">const</span> childComponent <span class="token operator">=</span> Vue<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    template<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+			&lt;div&gt;我是一个子组件&lt;div&gt;
+			&lt;button @click=&quot;showParent&quot;&gt;&lt;/button&gt;
+		</span><span class="token template-punctuation string">`</span></span>
+    methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token function">showParent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$parent<span class="token punctuation">.</span>message<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword">const</span> parentComponent <span class="token operator">=</span> Vue<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    template<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+			&lt;div&gt;我是一个父组件&lt;div&gt;
+			&lt;child-cpn&gt;&lt;/child-cpn&gt;
+		</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        message<span class="token operator">:</span> <span class="token string">'我是父组件'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    components<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">'child-cpn'</span><span class="token operator">:</span> childComponent
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> app1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+    components<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string">'parent-cpn'</span><span class="token operator">:</span> parentCompenent 
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h4 id="非父子组件通信"><a href="#非父子组件通信" class="header-anchor">#</a> 非父子组件通信</h4> <ul><li>刚才我们讨论的都是父子组件间的通信，那如果是非父子关系呢?
+<ul><li>非父子组件关系包括多个层级的组件，也包括兄弟组件的关系</li></ul></li> <li>在Vue2.x中，有一种方案是通过中央事件总线，也就是一个中介来完成
+<ul><li>但是这种方案和直接使用Vuex的状态管理方案还是逊色很多</li> <li>并且Vuex提供了更多好用的功能，所以这里我们暂且不讨论这种方案，后续我们专门学习Vuex的状态管理</li></ul></li></ul> <h2 id="组件化高级"><a href="#组件化高级" class="header-anchor">#</a> 组件化高级</h2> <h3 id="为什么使用slot？"><a href="#为什么使用slot？" class="header-anchor">#</a> 为什么使用slot？</h3> <ul><li><p>组件的插槽也是为了让我们封装的组件更加具有扩展性</p></li> <li><p>组件的插槽也是为了让我们封装的组件更加具有扩展性</p></li> <li><p>让使用者可以决定组件内部的一些内容到底展示什么</p></li></ul> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>例：移动网站中的导航栏</p> <ul><li>移动开发中，几乎每个页面都有导航栏</li> <li>导航栏我们必然会封装成一个插件，比如nav-bar组件</li> <li>一旦有了这个组件，我们就可以在多个页面中复用了</li></ul></div> <h3 id="如何使用slot？"><a href="#如何使用slot？" class="header-anchor">#</a> 如何使用slot？</h3> <ul><li>如何封装合适呢？抽取共性，保留不同
+<ul><li>最好的封装方式就是将共性抽取到组件中，将不同暴露为插槽</li> <li>一旦我们预留了插槽，就可以让使用者根据自己的需求，决定插槽中插入什么内容</li> <li>是搜索框，还是文字，还是菜单，由调用者自己来决定</li></ul></li></ul> <h3 id="slot的基本使用"><a href="#slot的基本使用" class="header-anchor">#</a> slot的基本使用</h3> <ul><li><p>在子组件中，使用特殊的元素<code>&lt;slot&gt;</code>就可以为子组件开启一个插槽</p></li> <li><p>该插槽插入什么内容取决于父组件如何使用</p></li> <li><p>我们通过一个简单的例子，来给子组件定义一个插槽：</p></li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>myCpn<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span><span class="token punctuation">&gt;</span></span>我是一个插槽中的默认内容<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>vue.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+	Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'my-cpn'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    template<span class="token operator">:</span> <span class="token string">'#myCpn'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  
+  <span class="token keyword">let</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    el<span class="token operator">:</span> <span class="token string">'#app'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><ul><li>有了这个插槽后，父组件如何使用呢？</li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  # 将会显示插槽默认的内容
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-cpn</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-cpn</span><span class="token punctuation">&gt;</span></span>
+  # 将会显示替换的内容
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-cpn</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>我是替换插槽的内容<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+  	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>我也是替换插槽的内容<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-cpn</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="具名插槽slot"><a href="#具名插槽slot" class="header-anchor">#</a> 具名插槽slot</h3> <ul><li>当子组件功能复杂时，子组件的插槽可能并非是一个
+<ul><li>比如我们封装一个导航栏的子组件，可能就需要三个插槽，分别代表左边、中间、右边</li> <li>那么，外面在给插槽插入内容时，如何区分插入的是哪一个呢</li> <li>这个时候，我们就需要给插槽起一个名字</li></ul></li> <li>如何使用具名插槽呢
+<ul><li>非常简单，只要给slot元素一个name属性即可</li> <li><code>&lt;slot name='myslot'&gt;&lt;/slot&gt;</code></li></ul></li> <li>我们来给出一个案例:</li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>    
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>utf-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token comment">&lt;!-- 没有传入任何内容 --&gt;</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-cpn</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-cpn</span><span class="token punctuation">&gt;</span></span>
+
+      <span class="token comment">&lt;!-- 传入某一个内容 --&gt;</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-cpn</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>left<span class="token punctuation">&quot;</span></span> <span class="token punctuation">&gt;</span></span>我是返回	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-cpn</span><span class="token punctuation">&gt;</span></span>
+
+      <span class="token comment">&lt;!-- 传入所有内容 --&gt;</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-cpn</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>left<span class="token punctuation">&quot;</span></span> <span class="token punctuation">&gt;</span></span>我是返回	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>center<span class="token punctuation">&quot;</span></span> <span class="token punctuation">&gt;</span></span>我是标题	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>right<span class="token punctuation">&quot;</span></span> <span class="token punctuation">&gt;</span></span>我是菜单<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>				
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-cpn</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>myCpn<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>left<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>我是左侧<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>center<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>我是中间<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>right<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>我是右侧<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span>			
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>./vue.js<span class="token punctuation">&quot;</span></span> <span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+      Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'my-cpn'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        template<span class="token operator">:</span> <span class="token string">'#myCpn'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+      <span class="token keyword">let</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+
+</code></pre></div><h3 id="编译作用域"><a href="#编译作用域" class="header-anchor">#</a> 编译作用域</h3> <p>官方对于这一概念表述的比较简单，我们通过一个例子来理解这个概念</p> <ul><li>我们来考虑下面的代码是否最终是可以渲染出来的：
+<ul><li><code>&lt;my-cpn v-show=&quot;isShow&quot;&gt;&lt;/my-cpn&gt;</code>中，我们使用了isShow属性</li> <li>isShow属性包含在组件中，也包含在Vue实例中</li></ul></li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-cpn</span> <span class="token attr-name">v-show</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>isShow<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-cpn</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>myCpn<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    我是否能显示出来
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>./vue.js<span class="token punctuation">&quot;</span></span> <span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'my-cpn'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    template<span class="token operator">:</span> <span class="token string">'#myCpn'</span><span class="token punctuation">,</span>
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        isShow<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token comment">//在子组件中定义了isShow</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">let</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+    data<span class="token operator">:</span> <span class="token punctuation">{</span>
+      isShow<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token comment">//在实例中同样定义了isShow</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p><strong>最终：我们发现可以显示出来</strong></p> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>官方给出了一条准则：父组件模板的所有东西都会在父级作用域内编译；子组件模板的所有东西都会在子级作用域内编译。</p></div> <ul><li>而我们在使用<code>&lt;my-cpn v-show=&quot;isShow&quot;&gt;&lt;/my-cpn&gt;</code>的时候，整个组件的使用过程是相当于在父组件中出现的</li> <li>那么他的作用域就是父组件，使用的属性也是属于父组件的属性</li> <li>因此，isShow使用的是Vue实例中的属性，而不是子组件的属性</li></ul> <h3 id="作用域插槽"><a href="#作用域插槽" class="header-anchor">#</a> 作用域插槽</h3> <ul><li>父组件替换插槽的标签，但是内容由子组件来提供</li></ul> <p>我们通过一个实际的需求来体现：</p> <ul><li>子组件中包括一组数据，比如：pLanguages: ['JavaScript', 'Python', 'Swift', 'Go', 'C++']</li> <li>内容在子组件，希望父组件告诉我们如何展示，怎么办呢？
+<ul><li>利用slot作用域插槽就可以了</li></ul></li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token comment">&lt;!-- 列表形式展示 --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-cpn</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">slot-scope</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>slotProps<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>info in slotProps.data<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>{{ info }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-cpn</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token comment">&lt;!-- 水平展示 --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-cpn</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">slot-scope</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>slotProps<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>info in slotProps.data<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>{{ info }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-cpn</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>myCpn<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span> <span class="token attr-name">:data</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>pLanguages<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>./vue.js<span class="token punctuation">&quot;</span></span> <span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'my-cpn'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    template<span class="token operator">:</span> <span class="token string">'#myCpn'</span><span class="token punctuation">,</span>
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        pLanguages<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'Java'</span><span class="token punctuation">,</span><span class="token string">'python'</span><span class="token punctuation">,</span><span class="token string">'swift'</span><span class="token punctuation">,</span><span class="token string">'go'</span><span class="token punctuation">,</span><span class="token string">'C++'</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">let</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    el<span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><ul><li>在父组件使用我们的子组件时，从子组件中拿到数据：
+<ul><li>我们通过<code>&lt;template slot-scope=&quot;slotProps&quot;&gt;</code>获取到slotProps属性</li> <li>在通过slotProps.data就可以获取到刚才我们传入的data了</li></ul></li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2020-2-16 16:20:42</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tech/vue/Vue基础语法.html" class="prev">
+        Vue基础语法
+      </a></span> <span class="next"><a href="/tech/vue/前端模块化.html">
+        前端模块化
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.518a227c.js" defer></script><script src="/assets/js/3.70fd9169.js" defer></script><script src="/assets/js/5.29b61dc1.js" defer></script>
+  </body>
+</html>
